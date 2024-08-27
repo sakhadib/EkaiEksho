@@ -249,3 +249,58 @@
 
 
 
+.form-box {
+    background-color: #fff;
+    padding: 10px;
+}
+.form-control {
+    border: none !important;
+    font-size: 1.3rem !important;
+}
+.form-control:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+.form-select {
+    border: none !important;
+    font-size: 1.3rem !important;
+}
+.form-select:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+.amar-btn {
+    background-color: rgb(225, 225, 225);
+    color: #414042;
+    font-size: 1.3rem;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border: none;
+    margin-right: 10px;
+}
+.amar-btn:hover {
+    background-color: #414042;
+    color: white;
+}
+.amar-btn-outline {
+    background-color: transparent;
+    color: #414042;
+    font-size: 1.3rem;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border: 1px solid #414042;
+    margin-right: 10px;
+}
+.amar-btn-outline:hover {
+    background-color: #414042;
+    color: white;
+}
+.form-box:focus-within {
+    border-bottom: 4px solid #414042;
+    padding-bottom: 6px;
+}
+.text-danger {
+    font-size: 0.9rem;
+}

@@ -11,35 +11,45 @@
                 <img src="rsx/logo/tp_black.png" alt="" style="width: 70%">
             </div>
             <div class="col-md-5 offset-md-1 df dfc jcc">
-                {{-- <div class="row">
-                    <div class="col">
-                        <img src="" alt="" style="width: 200px;">
-                    </div>
-                </div> --}}
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="display-6">Welcome to muktobidya</h1>
-                        <p class="lead">Here starts your great journey of self-learnig.</p>
+                        <h1 class="display-5">Welcome to muktobidya</h1>
+                        <p class="lead">Here starts your great journey of self-learning.</p>
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-12">
-                        <form action="">
+                        <form action="/signup" method="post">
                             @csrf
-                            <div class="form-box mb-3">
-                                <input class="form-control" type="text" name="username" required placeholder="username">
+                            <div class="form-box mb-3 bs">
+                                <input class="form-control" type="text" name="username" required placeholder="Username" value="{{ old('username') }}">
+                                @error('username')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
-                            <div class="form-box mb-3">
-                                <input class="form-control" type="email" name="email" required placeholder="Email">
+                            <div class="form-box mb-3 bs">
+                                <input class="form-control" type="email" name="email" required placeholder="Email" value="{{ old('email') }}">
+                                @error('email')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
-                            <div class="form-box mb-3">
-                                <input class="form-control" type="text" name="FullName" required placeholder="Full Name">
+                            <div class="form-box mb-3 bs">
+                                <input class="form-control" type="text" name="FullName" required placeholder="Full Name" value="{{ old('FullName') }}">
+                                @error('FullName')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
-                            <div class="form-box mb-3">
-                                <input class="form-control" type="password" name="password" required placeholder="password">
+                            <div class="form-box mb-3 bs">
+                                <input class="form-control" type="password" name="password" required placeholder="Password">
+                                @error('password')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
-                            <div class="form-box mb-3">
+                            <div class="form-box mb-3 bs">
                                 <input class="form-control" type="password" name="conform_password" required placeholder="Confirm Password">
+                                @error('conform_password')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
                             <button class="amar-btn-outline mb-3 w-100" type="submit">Signup</button>
                             <p class="lead">
@@ -53,34 +63,26 @@
     </div>
 </div>
 
-
-
 <style>
-
-    body{
+    body {
         background-color: #fafafa;
     }
-    .main-page{
+    .main-page {
         min-height: 90vh;
     }
-
-    .form-box{
+    .form-box {
         background-color: #fff;
-        /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
         padding: 10px;
     }
-
-    .form-control{
+    .form-control {
         border: none;
         font-size: 1.3rem;
     }
-
-    .form-control:focus{
+    .form-control:focus {
         border: none;
         box-shadow: none;
     }
-
-    .amar-btn{
+    .amar-btn {
         background-color: rgb(225, 225, 225);
         color: #414042;
         font-size: 1.3rem;
@@ -89,15 +91,12 @@
         padding-bottom: 15px;
         border: none;
         margin-right: 10px;
-        /* border-radius: 5px; */
     }
-
-    .amar-btn:hover{
+    .amar-btn:hover {
         background-color: #414042;
         color: white;
     }
-
-    .amar-btn-outline{
+    .amar-btn-outline {
         background-color: transparent;
         color: #414042;
         font-size: 1.3rem;
@@ -106,14 +105,18 @@
         padding-bottom: 15px;
         border: 1px solid #414042;
         margin-right: 10px;
-        /* border-radius: 5px; */
     }
-
-    .amar-btn-outline:hover{
+    .amar-btn-outline:hover {
         background-color: #414042;
         color: white;
     }
+    .form-box:focus-within {
+        border-bottom: 4px solid #414042;
+        padding-bottom: 6px;
+    }
+    .text-danger {
+        font-size: 0.9rem;
+    }
 </style>
-
 
 @endsection
